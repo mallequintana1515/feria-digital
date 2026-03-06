@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feria Digital Agropecuaria - Plataforma Agrícola Profesional</title>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+
+<body>
+  <!-- HEADER PROFESIONAL -->
+  <header class="header">
+    <div class="header-contenedor">
+      <div class="logo-seccion">
+        <h1 class="logo">🌾 Feria Digital Agropecuaria</h1>
+        <p class="tagline">Conecta con productores, comparte tu cosecha, crece con nosotros</p>
+      </div>
+      <nav class="nav-header">
+        <button class="nav-btn activo" data-vista="inicio">Inicio</button>
+        <button class="nav-btn" data-vista="cultivo">Cultivos</button>
+        <button class="nav-btn" data-vista="galeria">Galería</button>
+        <button class="nav-btn" data-vista="historias">Historias</button>
+        <button class="nav-btn" data-vista="contacto">Contacto</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenedor-principal">
+    
+    <!-- VISTA: INICIO -->
+    <section id="vista-inicio" class="vista activa">
+      <div class="hero">
+        <div class="hero-contenido">
+          <h2>Bienvenido a la Feria Digital Agropecuaria</h2>
+          <p>Una plataforma moderna para compartir tus productos agrícolas, conectar con otros productores y crecer juntos en el mundo digital.</p>
+        </div>
+      </div>
+
+      <section class="caracteristicas">
+        <h3>Características principales</h3>
+        <div class="grid-caracteristicas">
+          <div class="caracteristica-card">
+            <div class="icono">📚</div>
+            <h4>Información de Cultivos</h4>
+            <p>Aprende sobre diferentes tipos de cultivos y sus características principales.</p>
+          </div>
+          <div class="caracteristica-card">
+            <div class="icono">📸</div>
+            <h4>Galería Profesional</h4>
+            <p>Sube y organiza tus mejores fotos con sistema de categorización inteligente.</p>
+          </div>
+          <div class="caracteristica-card">
+            <div class="icono">📖</div>
+            <h4>Comparte Historias</h4>
+            <p>Cuéntale al mundo tu experiencia como productor agrícola.</p>
+          </div>
+          <div class="caracteristica-card">
+            <div class="icono">🤝</div>
+            <h4>Conecta</h4>
+            <p>Contáctanos directamente para colaboraciones y consultas.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="llamada-accion">
+        <h3>¿Listo para compartir?</h3>
+        <button class="btn-grande" onclick="mostrarVista('galeria')">Sube tu primera foto</button>
+      </section>
+    </section>
+
+    <!-- VISTA: TIPO DE CULTIVO -->
+    <section id="vista-cultivo" class="vista">
+      <div class="seccion-header">
+        <h2>Tipos de Cultivo</h2>
+        <p>Información detallada sobre los principales cultivos de la región</p>
+      </div>
+
+      <div class="grid-cultivos">
+        <div class="cultivo-card">
+          <div class="cultivo-icono">☕</div>
+          <h3>Café</h3>
+          <p>Cultivo de alto valor con gran demanda en mercados internacionales. Requiere altitudes entre 1000-2000 metros y clima templado.</p>
+          <div class="cultivo-datos">
+            <span>Ciclo: 3-4 años</span>
+            <span>Rendimiento: 2-3 ton/ha</span>
+          </div>
+        </div>
+
+        <div class="cultivo-card">
+          <div class="cultivo-icono">🍌</div>
+          <h3>Plátano</h3>
+          <p>Cultivo versátil y de rápido crecimiento. Se adapta a diversos climas y es fundamental en la canasta agrícola local.</p>
+          <div class="cultivo-datos">
+            <span>Ciclo: 9-12 meses</span>
+            <span>Rendimiento: 15-25 ton/ha</span>
+          </div>
+        </div>
+
+        <div class="cultivo-card">
+          <div class="cultivo-icono">🍫</div>
+          <h3>Cacao</h3>
+          <p>Cultivo premium con excelente demanda. Proporciona ingresos sostenibles y ofrece beneficios ambientales.</p>
+          <div class="cultivo-datos">
+            <span>Ciclo: 3-4 años</span>
+            <span>Rendimiento: 1-1.5 ton/ha</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-adicional">
+        <h3>Consejos para mejorar tu producción</h3>
+        <ul class="lista-consejos">
+          <li>Mantén un suelo bien preparado y rico en materia orgánica</li>
+          <li>Utiliza semillas de calidad certificada</li>
+          <li>Implementa sistemas de riego eficientes</li>
+          <li>Controla plagas y enfermedades de manera preventiva</li>
+          <li>Documenta tus procesos para optimizar continuamente</li>
+        </ul>
+      </div>
+
+      <button class="btn-volver" id="volver-cultivo">← Volver al inicio</button>
+    </section>
+
+    <!-- VISTA: GALERÍA -->
+    <section id="vista-galeria" class="vista">
+      <div class="seccion-header">
+        <h2>Galería de Fotos</h2>
+        <p>Comparte tus momentos agrícolas con la comunidad</p>
+      </div>
+
+      <div class="seccion-subida">
+        <h3>📤 Sube tus fotos</h3>
+        <div class="zona-subida" id="zona-subida">
+          <div class="zona-subida-contenido">
+            <div class="zona-icono">📸</div>
+            <p><strong>Arrastra tus imágenes aquí</strong></p>
+            <p class="texto-pequeno">o haz clic para seleccionar</p>
+          </div>
+          <input type="file" id="input-imagen" accept="image/*" multiple hidden />
+        </div>
+        <p class="texto-info">Formatos permitidos: JPG, PNG, GIF | Tamaño máximo: 10MB</p>
+      </div>
+
+      <div class="seccion-filtros">
+        <h3>Filtrar por categoría</h3>
+        <div class="filtros">
+          <button class="btn-filtro activo" data-filtro="todos">📷 Todas (0)</button>
+          <button class="btn-filtro" data-filtro="cafe">☕ Café (0)</button>
+          <button class="btn-filtro" data-filtro="platano">🍌 Plátano (0)</button>
+          <button class="btn-filtro" data-filtro="cacao">🍫 Cacao (0)</button>
+        </div>
+      </div>
+
+      <div id="contenedor-galeria" class="galeria-grid"></div>
+
+      <button class="btn-volver" id="volver-galeria">← Volver al inicio</button>
+    </section>
+
+    <!-- VISTA: HISTORIAS -->
+    <section id="vista-historias" class="vista">
+      <div class="seccion-header">
+        <h2>Historias de Éxito</h2>
+        <p>Comparte tu experiencia y aprende de otros productores</p>
+      </div>
+
+      <div class="form-historia">
+        <h3>📝 Cuéntanos tu historia</h3>
+        <div class="form-grupo">
+          <input type="text" id="titulo-historia" placeholder="Título de tu historia..." maxlength="100" />
+          <span class="contador">0/100</span>
+        </div>
+        <textarea id="contenido-historia" placeholder="Escribe tu historia aquí... Cuéntanos sobre tus cultivos, desafíos, logros y lecciones aprendidas." maxlength="1000"></textarea>
+        <span class="contador">0/1000</span>
+        <button class="btn btn-principal" id="btn-guardar-historia">Publicar Historia</button>
+      </div>
+
+      <div class="contenedor-historias-header">
+        <h3>Historias Publicadas</h3>
+        <span class="total-historias">(0 historias)</span>
+      </div>
+
+      <div id="contenedor-historias" class="historias-lista"></div>
+
+      <button class="btn-volver" id="volver-historias">← Volver al inicio</button>
+    </section>
+
+    <!-- VISTA: CONTACTO -->
+    <section id="vista-contacto" class="vista">
+      <div class="seccion-header">
+        <h2>Contacto</h2>
+        <p>¿Tienes preguntas? Ponte en contacto con nosotros</p>
+      </div>
+
+      <div class="contacto-contenedor">
+        <div class="contacto-info">
+          <h3>Información de Contacto</h3>
+          
+          <div class="info-item">
+            <span class="icono-info">👤</span>
+            <div>
+              <h4>Responsable</h4>
+              <p>Mallerli Quintana</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="icono-info">📧</span>
+            <div>
+              <h4>Correo Electrónico</h4>
+              <p><a href="mailto:mallerliquintana1515@gmail.com">mallerliquintana1515@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="icono-info">📱</span>
+            <div>
+              <h4>Celular/WhatsApp</h4>
+              <p><a href="https://wa.me/573209147519" target="_blank">+57 3209147519</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="icono-info">📍</span>
+            <div>
+              <h4>Ubicación</h4>
+              <p>Santa Bárbara, Antioquia, Colombia</p>
+            </div>
+          </div>
+
+          <div class="botones-contacto">
+            <a class="btn-contacto email" href="mailto:mallerliquintana1515@gmail.com">
+              <span class="icono">✉️</span> Enviar Correo
+            </a>
+            <a class="btn-contacto whatsapp" href="https://wa.me/573209147519" target="_blank" rel="noopener">
+              <span class="icono">💬</span> WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="contacto-formulario">
+          <h3>Envíanos un Mensaje</h3>
+          <form id="formulario-contacto">
+            <div class="form-grupo">
+              <input type="text" id="contacto-nombre" placeholder="Tu nombre" required />
+            </div>
+            <div class="form-grupo">
+              <input type="email" id="contacto-email" placeholder="Tu correo" required />
+            </div>
+            <div class="form-grupo">
+              <input type="text" id="contacto-asunto" placeholder="Asunto" required />
+            </div>
+            <div class="form-grupo">
+              <textarea id="contacto-mensaje" placeholder="Tu mensaje..." rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-principal">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
+
+      <button class="btn-volver" id="volver-contacto">← Volver al inicio</button>
+    </section>
+
+  </main>
+
+  <!-- FOOTER PROFESIONAL -->
+  <footer class="footer">
+    <div class="footer-contenido">
+      <div class="footer-seccion">
+        <h4>Sobre nosotros</h4>
+        <p>Plataforma digital dedicada a conectar productores agrícolas y fortalecer la cadena agroalimentaria.</p>
+      </div>
+      <div class="footer-seccion">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="#" onclick="mostrarVista('cultivo')">Cultivos</a></li>
+          <li><a href="#" onclick="mostrarVista('galeria')">Galería</a></li>
+          <li><a href="#" onclick="mostrarVista('historias')">Historias</a></li>
+        </ul>
+      </div>
+      <div class="footer-seccion">
+        <h4>Contacto</h4>
+        <p>📧 mallerliquintana1515@gmail.com</p>
+        <p>📱 +57 3209147519</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Feria Digital Agropecuaria. Todos los derechos reservados. | Desarrollado con ❤️ para el sector agrícola</p>
+    </div>
+  </footer>
+
+  <script src="funcion.js"></script>
+</body>
+</html>
