@@ -370,3 +370,31 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 });
+document.getElementById("btn-inicio").addEventListener("click", function() {
+    document.querySelectorAll(".nav-btn").forEach(btn => btn.classList.remove("activo"));
+    this.classList.add("activo");
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const botones = document.querySelectorAll(".nav-btn");
+
+    botones.forEach(btn => {
+        btn.addEventListener("click", function() {
+            // Quitar activo de todos
+            botones.forEach(b => b.classList.remove("activo"));
+            // Marcar el que se clicó
+            this.classList.add("activo");
+        });
+    });
+});
+document.getElementById('form-registro-vulnerable').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const nombre = document.getElementById('reg-nombre').value;
+    const email = document.getElementById('reg-email').value;
+    const esVulnerable = document.querySelector('input[name="vulnerable"]:checked').value;
+
+    alert(`¡Gracias ${nombre}! Hemos recibido tu registro. Nos pondremos en contacto a través de ${email}.`);
+    
+    // Limpiar el formulario
+    this.reset();
+});

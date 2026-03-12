@@ -12,11 +12,11 @@
   <header class="header">
     <div class="header-contenedor">
       <div class="logo-seccion">
-        <h1 class="logo">🌾 Feria Digital Agropecuaria</h1>
+        <h1 class="logo"> Feria Digital Agropecuaria</h1>
         <p class="tagline">Conecta con productores, comparte tu cosecha, crece con nosotros</p>
       </div>
       <nav class="nav-header">
-        <button class="nav-btn activo" data-vista="inicio">Inicio</button>
+      <button id="btn-inicio" class="nav-btn activo" data-vista="inicio">Inicio</button>
         <button class="nav-btn" data-vista="cultivo">Cultivos</button>
         <button class="nav-btn" data-vista="galeria">Galería</button>
         <button class="nav-btn" data-vista="historias">Historias</button>
@@ -39,22 +39,22 @@
       <section class="caracteristicas">
         <h3>Características principales</h3>
         <div class="grid-caracteristicas">
-          <div class="caracteristica-card">
+          <div class="caracteristica-card" onclick="mostrarVista('cultivo')">
             <div class="icono">📚</div>
             <h4>Información de Cultivos</h4>
             <p>Aprende sobre diferentes tipos de cultivos y sus características principales.</p>
           </div>
-          <div class="caracteristica-card">
+          <div class="caracteristica-card" onclick="mostrarVista('galeria')">
             <div class="icono">📸</div>
             <h4>Galería Profesional</h4>
             <p>Sube y organiza tus mejores fotos con sistema de categorización inteligente.</p>
           </div>
-          <div class="caracteristica-card">
+          <div class="caracteristica-card" onclick="mostrarVista('historias')">
             <div class="icono">📖</div>
             <h4>Comparte Historias</h4>
             <p>Cuéntale al mundo tu experiencia como productor agrícola.</p>
           </div>
-          <div class="caracteristica-card">
+          <div class="caracteristica-card" onclick="mostrarVista('historias')">
             <div class="icono">🤝</div>
             <h4>Conecta</h4>
             <p>Contáctanos directamente para colaboraciones y consultas.</p>
@@ -117,6 +117,91 @@
           <li>Documenta tus procesos para optimizar continuamente</li>
         </ul>
       </div>
+      <section class="seccion-comercial">
+
+  <div class="seccion-header">
+    <h3>📊 Listado de Precios y Registro</h3>
+    <p>Consulta los precios actuales y regístrate en nuestra base de datos</p>
+  </div>
+
+  <div class="tabla-contenedor">
+    <table class="tabla-precios">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Presentación</th>
+          <th>Precio Base (COP)</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>☕ Café Excelso</td>
+          <td>Kilo</td>
+          <td>$18.500</td>
+        </tr>
+
+        <tr>
+          <td>🍌 Plátano Hartón</td>
+          <td>Kilo</td>
+          <td>$3.200</td>
+        </tr>
+
+        <tr>
+          <td>🍫 Cacao en Grano</td>
+          <td>Kilo</td>
+          <td>$15.000</td>
+        </tr>
+
+        <tr>
+          <td>🥑 Aguacate Hass</td>
+          <td>Unidad</td>
+          <td>$4.500</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="registro-beneficiario">
+
+    <h4>📋 Formulario de Registro de Productores</h4>
+    <p class="texto-pequeno">Esta información nos ayuda a priorizar ayudas y capacitaciones.</p>
+
+    <form id="form-registro-vulnerable">
+
+      <div class="form-grupo">
+        <label>Nombre Completo:</label>
+        <input type="text" id="reg-nombre" placeholder="Ej: Juan Pérez" required>
+      </div>
+
+      <div class="form-grupo">
+        <label>Correo Electrónico:</label>
+        <input type="email" id="reg-email" placeholder="correo@ejemplo.com" required>
+      </div>
+
+      <div class="form-grupo-check">
+
+        <label>¿Pertenece usted a población vulnerable?</label>
+
+        <label>
+        <input type="radio" name="vulnerable" value="si" required> Sí
+        </label>
+
+        <label>
+        <input type="radio" name="vulnerable" value="no"> No
+        </label>
+
+      </div>
+
+      <button type="submit" class="btn btn-principal">
+        Registrarme en el programa
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
 
       <button class="btn-volver" id="volver-cultivo">← Volver al inicio</button>
     </section>
@@ -289,5 +374,71 @@
   </footer>
 
   <script src="funcion.js"></script>
-</body>
-</html>
+
+  <div class="seccion-header">
+    <h3>📊 Listado de Precios y Registro</h3>
+    <p>Consulta los precios actuales y regístrate en nuestra base de datos</p>
+  </div>
+
+  <div class="tabla-contenedor">
+    <table class="tabla-precios">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Presentación</th>
+          <th>Precio Base (COP)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>☕ Café Excelso</td>
+          <td>Kilo</td>
+          <td>$18.500</td>
+        </tr>
+        <tr>
+          <td>🍌 Plátano Hartón</td>
+          <td>Kilo</td>
+          <td>$3.200</td>
+        </tr>
+        <tr>
+          <td>🍫 Cacao en Grano</td>
+          <td>Kilo</td>
+          <td>$15.000</td>
+        </tr>
+        <tr>
+          <td>🥑 Aguacate Hass</td>
+          <td>Unidad</td>
+          <td>$4.500</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="registro-beneficiario">
+    <h4>📋 Formulario de Registro de Productores</h4>
+    <p class="texto-pequeno">Esta información nos ayuda a priorizar ayudas y capacitaciones.</p>
+    
+    <form id="form-registro-vulnerable">
+      <div class="form-grupo">
+        <label for="reg-nombre">Nombre Completo:</label>
+        <input type="text" id="reg-nombre" placeholder="Ej: Juan Pérez" required />
+      </div>
+
+      <div class="form-grupo">
+        <label for="reg-email">Correo Electrónico:</label>
+        <input type="email" id="reg-email" placeholder="correo@ejemplo.com" required />
+      </div>
+
+      <div class="form-grupo-check">
+        <label>¿Pertenece usted a población vulnerable?</label>
+        <div class="opciones-radio">
+          <label><input type="radio" name="vulnerable" value="si" required> Sí</label>
+          <label><input type="radio" name="vulnerable" value="no"> No</label>
+        </div>
+        <p class="texto-ayuda">(Desplazados, víctimas del conflicto, madres cabeza de familia, etc.)</p>
+      </div>
+
+      <button type="submit" class="btn btn-principal">Registrarme en el programa</button>
+    </form>
+  </div>
+</section>

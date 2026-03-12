@@ -6,8 +6,8 @@
 }
 
 :root {
-  --color-primario: #2ecc71;
-  --color-secundario: #27ae60;
+  --color-primario: #2c77bd;
+  --color-secundario: #d416ab;
   --color-oscuro: #1a1a1a;
   --color-gris-claro: #f5f5f5;
   --color-gris-medio: #e0e0e0;
@@ -36,7 +36,7 @@ body {
 /* ===== HEADER ===== */
 .header {
   background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
-  color: white;
+  color: rgb(39, 43, 40);
   padding: 0;
   box-shadow: var(--sombra);
   position: sticky;
@@ -80,8 +80,8 @@ body {
 .nav-btn {
   padding: 10px 16px;
   border: none;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
+  background: rgba(128, 31, 31, 0.2);
+  color: rgb(255, 255, 255);
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
@@ -896,4 +896,117 @@ body {
   .footer-contenido {
     grid-template-columns: 1fr;
   }
+}
+/* Botón Inicio normal */
+#btn-inicio {
+  background: rgba(8, 82, 241, 0.2);
+  color: white;
+  transition: var(--transicion);
+}
+
+/* Cuando pasas el mouse */
+hover {
+  background: var(--color-secundario);
+  color: #05e605;
+  transform: translateY(-2px);
+}
+
+/* Cuando haces clic (activo) */
+#btn-inicio:active {
+  background: var(--color-oscuro);
+  color: var(--color-gris-claro);
+}
+/* Botón Inicio normal */
+#btn-inicio {
+  background: rgba(255, 44, 16, 0.2);
+  color: rgb(23, 102, 248);
+  transition: var(--transicion);
+}
+
+/* Hover: cuando pasas el mouse */
+#btn-inicio:hover {
+  background: var(--color-secundario);
+  color: #f81c1c;
+  transform: translateY(-2px);
+}
+
+/* Active: mientras mantienes el clic */
+#btn-inicio:active {
+  background: var(--color-oscuro);
+  color: var(--color-gris-claro);
+}
+
+/* Activo permanente (cuando se selecciona la sección) */
+#btn-inicio.activo {
+  background: var(--color-primario);
+  color: rgb(238, 8, 85);
+}
+/* Estilos para la tabla de precios */
+.tabla-contenedor {
+  margin: 20px 0;
+  overflow-x: auto;
+}
+
+.tabla-precios {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.tabla-precios th, .tabla-precios td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.tabla-precios th {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.tabla-precios tr:hover {
+  background-color: #f1f8e9;
+}
+
+/* Estilos para el formulario de registro */
+.registro-beneficiario {
+  background: #fdfdfd;
+  padding: 25px;
+  border-left: 5px solid #4CAF50;
+  margin-top: 30px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.form-grupo label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-grupo-check {
+  margin: 20px 0;
+  padding: 15px;
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+.opciones-radio {
+  margin-top: 10px;
+}
+
+.opciones-radio label {
+  margin-right: 20px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.texto-ayuda {
+  font-size: 0.8rem;
+  color: #666;
+  font-style: italic;
+  margin-top: 5px;
 }
